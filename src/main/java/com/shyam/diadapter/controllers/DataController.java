@@ -1,5 +1,6 @@
 package com.shyam.diadapter.controllers;
 
+import com.shyam.diadapter.model.DAConfig;
 import com.shyam.diadapter.services.GrpcClientService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

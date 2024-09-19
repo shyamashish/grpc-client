@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.shyam.diadapter";
+option java_outer_classname = "DataServiceProto";
+
+service DataService {
+  rpc ProcessData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  string request_id = 1;
+  string query = 2;
+}
+
+message DataResponse {
+  bytes data = 1;
+}

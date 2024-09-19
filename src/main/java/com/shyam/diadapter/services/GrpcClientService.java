@@ -22,7 +22,7 @@ public class GrpcClientService {
                 .maxInboundMessageSize(1024 * 1024 * 1024)
                 .build();
 
-        log.info("ch::");
+        log.info("SKC123::ch::");
         this.grpcStub = DataServiceGrpc.newBlockingStub(ch);
     }
 
@@ -34,11 +34,10 @@ public class GrpcClientService {
                 .build();
 
         LocalDateTime start = LocalDateTime.now();
-        log.info("python server called at:: {}", start);
 
         DataServiceProto.DataResponse response = grpcStub.processData(request);
         LocalDateTime end = LocalDateTime.now();
-        log.info("python server consumed:: {}", start.until(end, ChronoUnit.SECONDS));
+        log.info("SKC: DA consumed:: {}", start.until(end, ChronoUnit.SECONDS));
 
         return response.getData().toByteArray();
     }
